@@ -9,4 +9,7 @@ A smart contract to track and trace the origin of an asset while protecting the 
 ## Step to run
 
 1. npm i 
-2. npm run test
+2. npm i -g ganache-cli
+3. ganache-cli
+4. open new terminal
+5. npm run test
