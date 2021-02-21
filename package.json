@@ -1,0 +1,22 @@
+{
+  "name": "contracttests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "prettier": "^2.2.1",
+    "prettier-plugin-solidity": "^1.0.0-beta.5",
+    "truffle": "^5.1.67"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "pretty": "npx prettier --write 'test/*.sol'",
+    "pretty:sol": "npx prettier --write 'test/*.sol'",
+    "test": "truffle test"
+  },
+  "author": "",
+  "license": "ISC"
+}
