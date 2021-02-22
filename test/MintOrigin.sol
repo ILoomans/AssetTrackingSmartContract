@@ -8,7 +8,6 @@ contract MintOrigin is ERC721 {
     address payable public owner;
     address public child1;
     address public child2;
-    // For changing the  manufacturer
 
     address public cParent;
     address public removeSig;
@@ -18,7 +17,6 @@ contract MintOrigin is ERC721 {
 
     EnumerableSet.AddressSet Minters;
 
-    //Add Location
     struct minter {
         string Name;
         uint256 Time;
@@ -155,10 +153,6 @@ contract MintOrigin is ERC721 {
         }
     }
 
-    /**function proposeChangeManufacturer(address _to, address _new) public onlyOwner existingManufacturer(_to) {
-        oldMan = _to;
-        newMan = _new;
-    }**/
 
     function changeManufacturer(address _old, address _new)
         public
@@ -172,11 +166,6 @@ contract MintOrigin is ERC721 {
         Minters.add(_new);
     }
 
-    /**function proposeRemoveMinter(address _to) public onlyOwner existingManufacturer(_to){
-
-
-        removeMan = _to; 
-    } **/
 
     function removeMinter(address _old)
         public
@@ -211,17 +200,7 @@ contract MintOrigin is ERC721 {
         theSameBool(DistInfo[_to].isDist, true)
         theSameBool(Distributors[msg.sender].contains(_to), false)
     {
-        //require that they exist
 
-        /**  require(
-            DistInfo[_to].isDist == true,
-            "This distributor does not exist yet, you must use the createDist function"
-        );
-        require(
-            Distributors[msg.sender].contains(_to) == false,
-            "This is already one of your distributors"
-        ); 
-        **/
         Distributors[msg.sender].add(_to);
         DistMinters[_to].add(msg.sender);
     }
